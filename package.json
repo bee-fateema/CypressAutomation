@@ -1,0 +1,22 @@
+{
+  "name": "cypress-modern-automation-testing-from-scartch-plus-frameworks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules\\.bin\\cypress run",
+    "headTest": "npm run test -- --headed",
+    "chromeTest": "npm run test -- --browser chrome",
+    "recordDashboardTest": "npm run test -- --record --key 4b07590f-437f-465e-b546-6bb6303161e3 --reporter mochawesome",
+    "GreenKartTest": "npm run test -- --spec 'cypress/integration/greenKartTests/*'",
+    "ExamplesTest": "npm run test -- --spec 'cypress/integration/examples/*'"
+  },
+  "author": "Bee",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^10.2.0",
+    "cypress-iframe": "^1.0.1",
+    "mocha": "^10.0.0",
+    "mochawesome": "^7.1.3"
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-06-30T05:18:17.026Z",
+    "end": "2022-06-30T05:18:27.916Z",
+    "duration": 10890,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "296c4476-2e2b-41a4-bbd2-7c0b4e8b3c57",
+      "title": "",
+      "fullFile": "cypress\\integration\\examples\\TestFramework.js",
+      "file": "cypress\\integration\\examples\\TestFramework.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "9fdcbe80-95fe-409a-be2d-be73fb991e14",
+          "title": "Cypress Framework",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Page Object Design Pattern",
+              "fullTitle": "Cypress Framework Page Object Design Pattern",
+              "timedOut": null,
+              "duration": 9252,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//create object to import the methods\nconst homePage = new _HomePage.default();\nhomePage.visitHomePage();\nhomePage.getEditBox().type(Jdata.name);\nhomePage.getGender().select(Jdata.gender).should(\"have.value\", \"Female\"); //Validate the text box has the correct value from input\nhomePage.getTwoWayDatabinding().should(\"have.value\", Jdata.name); //Validate the attribute, i.e., minimum character length is 2\nhomePage.getEditBox().should(\"have.attr\", \"minlength\", \"2\"); //Validate the radio button is disabled\nhomePage.getEntrepreneur().should(\"be.disabled\");\nhomePage.getShopTab().click(); //Product Page\nconst productPage = new _ProductPage.default();\nJdata.productName.forEach(element => {\n  cy.selectProduct(element);\n});\nproductPage.goToCheckout().click(); //Billing Page\nconst billingPage = new _BillingPage.default();\nbillingPage.verifyBillingTotal();\nbillingPage.goToCheckout().click(); //Post Checkout Page\nconst postCheckoutPage = new _PostCheckoutPage.default();\npostCheckoutPage.selectCountry(\"India\");\npostCheckoutPage.termsAndConditionsPlusPurchase();\npostCheckoutPage.verifySuccessfulPurchase();",
+              "err": {},
+              "uuid": "cb4921b8-8266-40f0-9842-00060fc9e7f1",
+              "parentUUID": "9fdcbe80-95fe-409a-be2d-be73fb991e14",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "cb4921b8-8266-40f0-9842-00060fc9e7f1"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 9252,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
