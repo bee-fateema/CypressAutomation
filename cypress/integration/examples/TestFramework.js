@@ -28,11 +28,12 @@ import PostCheckoutPage from "../../support/PageObjects/PostCheckoutPage";
 
 //Alternate method got on own
 describe("Cypress Framework", () => {
-  let Jdata;
+  // let Jdata;
   before(() => {
-    cy.fixture("example").then((data) => {
-      Jdata = data;
-    });
+    // cy.fixture("example").then((data) => {
+    //   Jdata = data;
+    // });
+    cy.fixture("example.json").as("Jsondata");
   });
   //   it("Data Driven testing with fixtures", () => {
   //     cy.visit(Cypress.env("url") + "angularpractice/");
@@ -89,6 +90,10 @@ describe("Cypress Framework", () => {
 
     //Product Page
     const productPage = new ProductPage();
+    // Jdata.productName.forEach((element) => {
+    //   cy.selectProduct(element);
+    // });
+    let Jdata = this.Jsondata;
     Jdata.productName.forEach((element) => {
       cy.selectProduct(element);
     });
