@@ -19,6 +19,18 @@ Cypress.Commands.add("selectProduct", (productName) => {
   });
 });
 
+//Make Login API calls to extract the response token using Cypress
+Cypress.Commands.add("LoginAPI", () => {
+  cy.request("POST", "https://rahulshettyacademy.com/api/ecom/auth/login", {
+    userEmail: "zigkrist@gmail.com",
+    userPassword: "RahulShetty2799!",
+  }).then((response) => {
+    expect(response.status).to.equal(200);
+    console.log(response.body);
+    Cypress.env("token", response.body.token);
+  });
+});
+
 //
 //
 // -- This is a child command --
